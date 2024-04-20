@@ -140,7 +140,7 @@ wine3.addEventListener("click", () => {
 function activeWineClick() {
   const activeWine = document.querySelector(".wine.active");
   const notActiveWine = document.querySelectorAll(".wine:not(.active)");
-  gsap.to(glass, {
+  gsap.to(".glass-container", {
     y: -300,
     opacity: 1,
     duration: duration,
@@ -162,3 +162,29 @@ function activeWineClick() {
     });
   });
 }
+
+glass.addEventListener("click", () => {
+  const activeWine = document.querySelector(".wine.active");
+  const notActiveWine = document.querySelectorAll(".wine:not(.active)");
+  gsap.to(".glass-container", {
+    y: 0,
+    opacity: 0.5,
+    duration: duration,
+  });
+
+  gsap.to(activeWine, {
+    rotate: 0,
+    x: 0,
+    y: 0,
+    opacity: 1,
+    duration: duration,
+  });
+
+  notActiveWine.forEach((wine) => {
+    gsap.to(wine, {
+      opacity: 1,
+      display: "block",
+      duration: duration,
+    });
+  });
+});
