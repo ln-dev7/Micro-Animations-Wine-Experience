@@ -7,10 +7,15 @@ const wine1 = document.querySelector(".wine-1");
 const wine2 = document.querySelector(".wine-2");
 const wine3 = document.querySelector(".wine-3");
 const circle = document.querySelector(".circle");
+const glass = document.querySelector(".glass");
 
 const duration = 0.5;
 
 wine1.addEventListener("click", () => {
+  if (wine1.classList.contains("active")) {
+    activeWineClick();
+    return;
+  }
   gsap.to(wine1, {
     duration: duration,
     width: 125,
@@ -49,6 +54,10 @@ wine1.addEventListener("click", () => {
 });
 
 wine2.addEventListener("click", () => {
+  if (wine2.classList.contains("active")) {
+    activeWineClick();
+    return;
+  }
   gsap.to(wine1, {
     duration: duration,
     width: 90,
@@ -87,6 +96,10 @@ wine2.addEventListener("click", () => {
 });
 
 wine3.addEventListener("click", () => {
+  if (wine3.classList.contains("active")) {
+    activeWineClick();
+    return;
+  }
   gsap.to(wine1, {
     duration: duration,
     width: 90,
@@ -124,13 +137,9 @@ wine3.addEventListener("click", () => {
   wine3.classList.add("active");
 });
 
-const activeWine = document.querySelector(".wine.active");
-const notActiveWine = document.querySelectorAll(".wine:not(.active)");
-const glass = document.querySelector(".glass");
-
-console.log(activeWine);
-
-activeWine.addEventListener("click", () => {
+function activeWineClick() {
+  const activeWine = document.querySelector(".wine.active");
+  const notActiveWine = document.querySelectorAll(".wine:not(.active)");
   gsap.to(glass, {
     y: -300,
     opacity: 1,
@@ -148,7 +157,8 @@ activeWine.addEventListener("click", () => {
   notActiveWine.forEach((wine) => {
     gsap.to(wine, {
       opacity: 0,
+      display: "none",
       duration: duration,
     });
   });
-});
+}
