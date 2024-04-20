@@ -10,21 +10,39 @@
 
 <body>
   <div class="relative w-full h-screen overflow-hidden" id="app">
-    <div class="absolute top-0 w-full flex items-center justify-between py-2 px-6 bg-black text-white font-semibold">
+    <div
+      class="absolute z-50 top-0 w-full flex items-center justify-between py-2 px-6 bg-white text-red-500 font-semibold">
       <a class="underline underline-offset-2" href="https://x.com/ln_dev7">
         Code by LN
       </a>
-      <a class="underline underline-offset-2" href="https://github.com/ln-dev7/">
+      <a class="underline underline-offset-2" href="https://github.com/ln-dev7/Micro-Animations-Wine-Experience">
         GitHub
       </a>
-      <a class="underline underline-offset-2" href="#">
+      <a class="underline underline-offset-2"
+        href="https://www.figma.com/file/zMOJ7wjbfeG1tNzqiZtDHI/Micro-animations--Wine-Experience-(Community)?type=design&node-id=0%3A1&mode=design&t=ZI7EaayDouHqLrQy-1">
         Figma
       </a>
     </div>
-    <div class="w-full h-full flex items-center justify-center p-4">
-      <h1 className="text-3xl font-bold underline">
-        FUN ANIMATION TEMPLATE
-      </h1>
+    <div class="relative w-full h-full flex items-center justify-center p-4">
+      <div class="absolute w-full h-full flex items-center justify-center">
+        <div class="w-[400px] h-[400px] flex items-center justify-center z-20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <!-- 175px -->
+          <img src="/wine-3.svg" alt="Wine" class="absolute w-[130px] -left-5 cursor-pointer wine wine-3" />
+          <img src="/wine-1.svg" alt="Wine" class="absolute w-[125px] left-[135px] cursor-pointer wine wine-1 active" />
+          <!-- 162px -->
+          <img src="/wine-2.svg" alt="Wine" class="absolute w-[120px] left-72 cursor-pointer wine wine-2" />
+        </div>
+      </div>
+      <!-- border-2 border-[#D04D3D] -->
+      <div class="absolute circle w-96 h-96 bg-[#D04D3D] rounded-full bottom-20 opacity-10"></div>
+      <div class="absolute left-0 right-0 top-0">
+        <img src="/svg-3.svg" alt="SVG" class="w-full absolute svg-3 opacity-0" />
+        <img src="/svg-1.svg" alt="SVG" class="w-full absolute svg-1" />
+        <img src="/svg-2.svg" alt="SVG" class="w-full absolute svg-2 opacity-0" />
+      </div>
+      <div class="glass absolute left-0 right-0 -bottom-[900px] flex items-center justify-center opacity-50">
+        <img src="/glass.svg" alt="glass" class="" />
+      </div>
     </div>
   </div>
   <script type="module" src="/main.js"></script>
